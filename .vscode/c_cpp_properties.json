@@ -1,12 +1,19 @@
 {
+    "version": 4,
     "configurations": [
         {
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/sp-foundation/src"
+                "${workspaceFolder}/sp-foundation/src",
+                "${workspaceFolder}/sp-frontend/src"
             ],
-            "defines": [],
+            "defines": [
+                "UNIX",
+                "ENV_32BITS",
+                "GLFW",
+                "-Wno-dangling-else"
+            ],
             "macFrameworkPath": [
                 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
             ],
@@ -15,6 +22,5 @@
             "cppStandard": "c++11",
             "intelliSenseMode": "clang-x64"
         }
-    ],
-    "version": 4
+    ]
 }
