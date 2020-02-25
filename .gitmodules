@@ -3,7 +3,7 @@
 	url = https://github.com/bgsa/sp-frontend.git
 [submodule "vendor/imgui"]
 	path = vendor/imgui
-	url = https://github.com/ocornut/imgui.git
+	url = http://github.com/bgsa/imgui.git
 [submodule "vendor/glfw"]
 	path = vendor/glfw
 	url = https://github.com/glfw/glfw.git
