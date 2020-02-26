@@ -5,6 +5,7 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
+                "${workspaceFolder}/vendor/imgui",
                 "${workspaceFolder}/sp-foundation/src",
                 "${workspaceFolder}/sp-frontend/src"
             ],
