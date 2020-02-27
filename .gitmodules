@@ -10,3 +10,6 @@
 [submodule "vendor/glew"]
 	path = vendor/glew
 	url = https://github.com/nigels-com/glew.git
+[submodule "sp-foundation"]
+	path = sp-foundation
+	url = https://github.com/bgsa/sp-foundation.git
