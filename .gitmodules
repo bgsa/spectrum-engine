@@ -1,15 +1,9 @@
-[submodule "sp-frontend"]
-	path = sp-frontend
-	url = https://github.com/bgsa/sp-frontend.git
 [submodule "vendor/imgui"]
 	path = vendor/imgui
 	url = http://github.com/bgsa/imgui.git
-[submodule "vendor/glfw"]
-	path = vendor/glfw
-	url = https://github.com/glfw/glfw.git
-[submodule "vendor/glew"]
-	path = vendor/glew
-	url = https://github.com/nigels-com/glew.git
 [submodule "sp-foundation"]
 	path = sp-foundation
 	url = https://github.com/bgsa/sp-foundation.git
+[submodule "sp-frontend"]
+        path = sp-frontend
+        url = https://github.com/bgsa/sp-frontend.git
