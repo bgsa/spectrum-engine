@@ -9,3 +9,4 @@ vendor/lib/Debug/
 Debug/
 Release/
 x64/
+*vcxproj.user
