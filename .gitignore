@@ -1,5 +1,11 @@
 .DS_Store
+.vs/
 vendor/lib/*.a
 vendor/lib/*.so
 vendor/lib/*.lib
 vendor/lib/*.dll
+vendor/lib/Release/
+vendor/lib/Debug/
+Debug/
+Release/
+x64/
