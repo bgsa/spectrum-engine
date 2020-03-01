@@ -1,1 +1,5 @@
 .DS_Store
+vendor/lib/*.a
+vendor/lib/*.so
+vendor/lib/*.lib
+vendor/lib/*.dll
