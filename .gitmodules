@@ -10,3 +10,6 @@
 [submodule "vendor/glfw"]
 	path = vendor/glfw
 	url = https://github.com/glfw/glfw.git
+[submodule "sp-physics"]
+	path = sp-physics
+	url = https://github.com/bgsa/sp-physics.git
