@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sp-foundation", "sp-foundat
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sp-frontend", "sp-frontend\sp-frontend.vcxproj", "{B76F860A-5500-4BE0-92B8-3EACB62DAA54}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sp-physics", "sp-physics\sp-physics.vcxproj", "{E59B16CA-EE86-41BB-B1B4-E81DB09E8561}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{B76F860A-5500-4BE0-92B8-3EACB62DAA54}.Release|x64.Build.0 = Release|x64
 		{B76F860A-5500-4BE0-92B8-3EACB62DAA54}.Release|x86.ActiveCfg = Release|Win32
 		{B76F860A-5500-4BE0-92B8-3EACB62DAA54}.Release|x86.Build.0 = Release|Win32
+		{E59B16CA-EE86-41BB-B1B4-E81DB09E8561}.Debug|x64.ActiveCfg = Debug|x64
+		{E59B16CA-EE86-41BB-B1B4-E81DB09E8561}.Debug|x64.Build.0 = Debug|x64
+		{E59B16CA-EE86-41BB-B1B4-E81DB09E8561}.Debug|x86.ActiveCfg = Debug|Win32
+		{E59B16CA-EE86-41BB-B1B4-E81DB09E8561}.Debug|x86.Build.0 = Debug|Win32
+		{E59B16CA-EE86-41BB-B1B4-E81DB09E8561}.Release|x64.ActiveCfg = Release|x64
+		{E59B16CA-EE86-41BB-B1B4-E81DB09E8561}.Release|x64.Build.0 = Release|x64
+		{E59B16CA-EE86-41BB-B1B4-E81DB09E8561}.Release|x86.ActiveCfg = Release|Win32
+		{E59B16CA-EE86-41BB-B1B4-E81DB09E8561}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
