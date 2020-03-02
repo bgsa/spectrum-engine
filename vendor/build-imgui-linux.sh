@@ -17,7 +17,8 @@ cmake .. -G "Unix Makefiles"                 \
 	-DBUILD_SHARED_LIBS:BOOL=$SHARED_LIB     \
 	-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE    \
 	-DCMAKE_ENABLE_EXPORTS:BOOL=ON           \
-	-DOPERATING_SYSTEM:STRING=LINUX
+	-DOPERATING_SYSTEM:STRING=LINUX          \
+	-DCMAKE_C_FLAGS:STRING="-m32"             
 
 cmake --build . --config $BUILD_TYPE
 

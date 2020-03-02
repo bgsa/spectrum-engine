@@ -19,7 +19,8 @@ cmake .. -G "Unix Makefiles"                  \
 	-DGLFW_BUILD_DOCS:BOOL=OFF                \
 	-DBUILD_SHARED_LIBS:BOOL=$SHARED_LIB      \
 	-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE     \
-	-DCMAKE_ENABLE_EXPORTS:BOOL=ON            
+	-DCMAKE_ENABLE_EXPORTS:BOOL=ON            \
+	-DCMAKE_C_FLAGS:STRING="-m32"             
 
 cmake --build . --config $BUILD_TYPE
 
