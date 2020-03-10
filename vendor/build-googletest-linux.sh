@@ -14,7 +14,8 @@ cd $BUILD_DIR
 cmake .. -G "Unix Makefiles"                  \
 	-DBUILD_SHARED_LIBS:BOOL=OFF              \
 	-DCMAKE_BUILD_TYPE:STRING=Release         \
-	-DCMAKE_ENABLE_EXPORTS:BOOL=ON
+	-DCMAKE_ENABLE_EXPORTS:BOOL=ON            \
+	-DCMAKE_CXX_FLAGS="-fPIC"
 
 cmake --build . --config Release
 
