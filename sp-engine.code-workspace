@@ -6,7 +6,16 @@
 	],
 	"settings": {
 		"files.associations": {
-			"iosfwd": "cpp"
-		}
+			"iosfwd": "cpp",
+			"cmath": "cpp",
+			"chrono": "cpp"
+		},
+		"catch2TestExplorer.executables": [
+			{
+				"name":"SpPhysicsTestRun",
+				"pattern": "**",
+				"cwd": "sp-physics/test/runner/bin",
+			}
+		]
 	}
 }
