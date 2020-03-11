@@ -1,14 +1,8 @@
+*vcxproj.user
 .DS_Store
 .vs/
-vendor/lib/*.a
-vendor/lib/*.so
-vendor/lib/*.lib
-vendor/lib/*.dll
-vendor/lib/Release/
-vendor/lib/Debug/
-vendor/lib/x86
-vendor/lib/x86_64
 Debug/
 Release/
 x64/
-*vcxproj.user
+vendor/lib
+vendor/bin
