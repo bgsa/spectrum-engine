@@ -16,3 +16,6 @@
 [submodule "vendor/googletest"]
 	path = vendor/googletest
 	url = https://github.com/google/googletest.git
+[submodule "vendor/gtest-runner"]
+	path = vendor/gtest-runner
+	url = https://github.com/nholthaus/gtest-runner.git
