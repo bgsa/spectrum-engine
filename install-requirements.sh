@@ -23,3 +23,5 @@ sudo apt-get install -y mesa-utils
 sudo apt-get install -y libglew-dev
 
 sudo apt-get install -y libglfw3-dev
+
+sudo apt-get install -y qt5-default libqt5xmlpatterns5-dev
