@@ -11,8 +11,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sp-physics", "sp-physics\sp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sp-physics-test", "sp-physics\test\sp-physics-test.vcxproj", "{5CD02D86-1E1D-4C05-9F1B-68A2297C2167}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sp-physics-test-runner", "sp-physics\test\runner\sp-physics-test-runner\sp-physics-test-runner.vcxproj", "{4800EDB4-4D37-4170-8C3F-EBA7085E7383}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -53,14 +51,6 @@ Global
 		{5CD02D86-1E1D-4C05-9F1B-68A2297C2167}.Release|x64.Build.0 = Release|x64
 		{5CD02D86-1E1D-4C05-9F1B-68A2297C2167}.Release|x86.ActiveCfg = Release|Win32
 		{5CD02D86-1E1D-4C05-9F1B-68A2297C2167}.Release|x86.Build.0 = Release|Win32
-		{4800EDB4-4D37-4170-8C3F-EBA7085E7383}.Debug|x64.ActiveCfg = Debug|x64
-		{4800EDB4-4D37-4170-8C3F-EBA7085E7383}.Debug|x64.Build.0 = Debug|x64
-		{4800EDB4-4D37-4170-8C3F-EBA7085E7383}.Debug|x86.ActiveCfg = Debug|Win32
-		{4800EDB4-4D37-4170-8C3F-EBA7085E7383}.Debug|x86.Build.0 = Debug|Win32
-		{4800EDB4-4D37-4170-8C3F-EBA7085E7383}.Release|x64.ActiveCfg = Release|x64
-		{4800EDB4-4D37-4170-8C3F-EBA7085E7383}.Release|x64.Build.0 = Release|x64
-		{4800EDB4-4D37-4170-8C3F-EBA7085E7383}.Release|x86.ActiveCfg = Release|Win32
-		{4800EDB4-4D37-4170-8C3F-EBA7085E7383}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
