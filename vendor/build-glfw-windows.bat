@@ -11,11 +11,11 @@ SET BUILD_DIR=glfw\build
 SET BUILD_TYPE=%2
 SET SHARED_LIB=OFF
 SET OUTPUT_DIR=%~dp0%lib\x86
-SET VS_PARAMETER=Win32
+SET VS_PARAMETER=
 
 IF %1==64 (
 	SET OUTPUT_DIR=%OUTPUT_DIR%_64
-	SET VS_PARAMETER=Win64
+	SET VS_PARAMETER= Win64
 )
 
 if %3==Dynamic (
@@ -26,7 +26,7 @@ if exist %BUILD_DIR% ( rmdir /s/q %BUILD_DIR% )
 mkdir %BUILD_DIR%
 cd %BUILD_DIR%
 
-cmake .. -G "Visual Studio 15 2017" -A %VS_PARAMETER%              ^
+cmake .. -G "Visual Studio 15 2017%VS_PARAMETER%"                 ^
 	-DGLFW_BUILD_EXAMPLES:BOOL=OFF                                 ^
 	-DGLFW_BUILD_TESTS:BOOL=OFF                                    ^
 	-DGLFW_BUILD_DOCS:BOOL=OFF                                     ^
