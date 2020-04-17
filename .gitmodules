@@ -25,3 +25,6 @@
 [submodule "vendor/OpenCL-ICD-Loader"]
 	path = vendor/OpenCL-ICD-Loader
 	url = https://github.com/KhronosGroup/OpenCL-ICD-Loader.git
+[submodule "sp-rendering"]
+	path = sp-rendering
+	url = https://github.com/bgsa/sp-rendering.git
