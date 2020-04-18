@@ -19,3 +19,8 @@ cmake --build . --config %BUILD_TYPE%
 
 cd ..\..\
 if exist %BUILD_DIR% ( rmdir /s/q %BUILD_DIR% )
+
+cd include
+if exist imgui ( rmdir /s/q imgui )
+mkdir imgui
+copy "imgui\*.h"   "include\imgui\"
