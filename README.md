@@ -1,2 +1,1 @@
-# spectrum-engine
-Spectrum Engine
+#include "docs/index.md"

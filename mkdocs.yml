@@ -1,1 +1,10 @@
 site_name: Spectrum Engine
+site_description: Spectrum Engine - Game Engine
+site_author: Bruno Gallego
+site_dir: ../spectrum-docs/
+theme: readthedocs
+site_url: null
+repo_name: GitHub
+repo_url: https://github.com/bgsa/spectrum-engine
+extra:
+    version: 0.1.0
