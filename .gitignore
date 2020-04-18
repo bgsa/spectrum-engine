@@ -8,3 +8,4 @@ vendor/lib
 vendor/lib/x86/**
 vendor/lib/x86_86/**
 vendor/bin
+vendor/include/pugixml/

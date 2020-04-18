@@ -83,3 +83,15 @@ Linux/Apple Plataform:
 * ./build-opencl-linux.sh
 * ./build-googletest-linux.sh
 * Open sp-engine.code-workspace in Visual Studio Code
+
+
+## Rules
+
+* Use "Clean Code" pratices
+* Avoid using C++11. Try to use C++99 whenever possible
+* Avoid using STL C++11
+* Do not use C++ version grater than 11.
+* Do not use scpecific resources from compiler, for instance "#pragma once" from MS Visual Studio Compiler. If you want use, create conditions and diretives.
+* Use float instead of double unless it is needed
+* Use Spectrum Data Types instead of native C data types, for instance: sp_float instead of float.
+* Do not leave commented code unless it is really needed

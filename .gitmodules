@@ -28,3 +28,6 @@
 [submodule "sp-rendering"]
 	path = sp-rendering
 	url = https://github.com/bgsa/sp-rendering.git
+[submodule "vendor/pugixml"]
+	path = vendor/pugixml
+	url = https://github.com/zeux/pugixml.git
