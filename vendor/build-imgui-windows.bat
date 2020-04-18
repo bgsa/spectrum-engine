@@ -10,7 +10,7 @@ cd %BUILD_DIR%
 
 cmake .. -G "Visual Studio 15 2017"           ^
 	-DBUILD_SHARED_LIBS:BOOL=%SHARED_LIB%     ^
-	-DCMAKE_BUILD_TYPE:STRING=%BUILD_TYPE%    ^
+	-DBUILD_TYPE:STRING=%BUILD_TYPE%          ^
 	-DCMAKE_ENABLE_EXPORTS:BOOL=ON            ^
 	-DOPERATING_SYSTEM:STRING=WINDOWS         ^
 	-DOUTPUT_LIB_DIR:STRING=..\..\lib\x86\
@@ -23,4 +23,6 @@ if exist %BUILD_DIR% ( rmdir /s/q %BUILD_DIR% )
 cd include
 if exist imgui ( rmdir /s/q imgui )
 mkdir imgui
-copy "imgui\*.h"   "include\imgui\"
+copy "..\imgui\*.h"   "imgui\"
+
+cd ..\

@@ -49,4 +49,6 @@ if exist pugixml ( rmdir /s/q pugixml )
 mkdir pugixml
 copy "..\pugixml\src\*.hpp"    "pugixml"
 
+cd ..\
+
 :END

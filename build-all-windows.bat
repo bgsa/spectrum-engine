@@ -1,9 +1,4 @@
-cd vendor
-call .\build-glfw-windows.bat
-call .\build-imgui-windows.bat
-call .\build-pugixml-windows.bat
-call .\build-googletest-windows.bat
-call .\build-opencl-windows.bat
+call .\build-dependencies.bat
 
 cd ..\sp-foundation
 call .\build-windows.bat
