@@ -9,6 +9,10 @@ Game Engine
 * `Cross-Plataform` - Spectrum supports Windows, Linux and Mac development with MS Visual Studio or VS Code and CMake.
 * `Cross-Publish` - Spectrum supports publishing in many targets, such as Windows, Linux, Apple and Android (iOS soon).
 
+## The FIRST Screenshot
+
+![First Screenshot](./images/first-screenshot.png)
+
 ## Modules
 * `SpFoundation` - Spectrum Foundation is the base of the engine. It contains infractructure, such as Data Types definition, I/O, Socket and Connections, and others helper functions.
 * `SpPhysics` - Spectrum Physcs contains all math and physics background, such as linear algebra library, collision detection and response system, particle system and so on.
