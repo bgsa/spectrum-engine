@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sp-physics-test", "sp-physi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sp-rendering", "sp-rendering\sp-rendering.vcxproj", "{C280AB1E-4BF1-4F80-A243-5C63F3038D8E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sp-foundation-test", "sp-foundation\test\sp-foundation-test.vcxproj", "{0F4E90DA-B037-4862-BA79-956D02350DC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{C280AB1E-4BF1-4F80-A243-5C63F3038D8E}.Release|x64.Build.0 = Release|x64
 		{C280AB1E-4BF1-4F80-A243-5C63F3038D8E}.Release|x86.ActiveCfg = Release|Win32
 		{C280AB1E-4BF1-4F80-A243-5C63F3038D8E}.Release|x86.Build.0 = Release|Win32
+		{0F4E90DA-B037-4862-BA79-956D02350DC4}.Debug|x64.ActiveCfg = Debug|x64
+		{0F4E90DA-B037-4862-BA79-956D02350DC4}.Debug|x64.Build.0 = Debug|x64
+		{0F4E90DA-B037-4862-BA79-956D02350DC4}.Debug|x86.ActiveCfg = Debug|Win32
+		{0F4E90DA-B037-4862-BA79-956D02350DC4}.Debug|x86.Build.0 = Debug|Win32
+		{0F4E90DA-B037-4862-BA79-956D02350DC4}.Release|x64.ActiveCfg = Release|x64
+		{0F4E90DA-B037-4862-BA79-956D02350DC4}.Release|x64.Build.0 = Release|x64
+		{0F4E90DA-B037-4862-BA79-956D02350DC4}.Release|x86.ActiveCfg = Release|Win32
+		{0F4E90DA-B037-4862-BA79-956D02350DC4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
