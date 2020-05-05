@@ -2,12 +2,6 @@
 
 set echo off
 
-export BUILD_DIR=glfw/build
-export BUILD_TYPE=Release
-export SHARED_LIB=OFF
-export OUTPUT_DIR_32=../../lib/x86
-export OUTPUT_DIR_64=../../lib/x86_64
-
 create_dir()
 {
 	if [ ! -d "$1" ]; then
@@ -26,54 +20,42 @@ make_build_dir()
 	create_dir $BUILD_DIR
 }
 
+build()
+{
+	export BUILD_DIR=glfw/build
+	export BUILD_TYPE=$2
+	export SHARED_LIB=OFF
+	export OUTPUT_DIR=../../lib/$3
 
-make_build_dir
-cd $BUILD_DIR
+	make_build_dir
+	cd $BUILD_DIR
 
-cmake .. -G "Unix Makefiles"                      \
-	-DGLFW_BUILD_EXAMPLES:BOOL=OFF            \
-	-DGLFW_BUILD_TESTS:BOOL=OFF               \
-	-DGLFW_BUILD_DOCS:BOOL=OFF                \
-	-DBUILD_SHARED_LIBS:BOOL=$SHARED_LIB      \
-	-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE     \
-	-DCMAKE_ENABLE_EXPORTS:BOOL=ON            \
-	-DCMAKE_C_FLAGS:STRING="-m32"             
+	cmake .. -G "Unix Makefiles"                      \
+		-DGLFW_BUILD_EXAMPLES:BOOL=OFF            \
+		-DGLFW_BUILD_TESTS:BOOL=OFF               \
+		-DGLFW_BUILD_DOCS:BOOL=OFF                \
+		-DBUILD_SHARED_LIBS:BOOL=$SHARED_LIB      \
+		-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE     \
+		-DCMAKE_ENABLE_EXPORTS:BOOL=ON            \
+		-DCMAKE_C_FLAGS:STRING="-m$1"
 
-cmake --build . --config $BUILD_TYPE
+	cmake --build . --config $BUILD_TYPE$1
 
-create_dir $OUTPUT_DIR_32/$BUILD_TYPE/
+	create_dir $OUTPUT_DIR/$BUILD_TYPE/
 
-if [ "$SHARED_LIB" == "OFF" ]; then
-	cp src/libglfw3.a   $OUTPUT_DIR_32/$BUILD_TYPE/
-else
-	cp src/libglfw3.so  $OUTPUT_DIR_32/$BUILD_TYPE/
-fi
+	if [ "$SHARED_LIB" == "OFF" ]; then
+		cp src/libglfw3.a   $OUTPUT_DIR/$BUILD_TYPE/
+	else
+		cp src/libglfw3.so  $OUTPUT_DIR/$BUILD_TYPE/
+	fi
 
+	cd ../../
 
-cd ../../
+	clear_build_dir
+}
 
-make_build_dir
-cd $BUILD_DIR
+build 32 Debug   x86    OFF
+build 32 Release x86    OFF
+build 64 Debug   x86_64 OFF
+build 64 Release x86_64 OFF
 
-cmake .. -G "Unix Makefiles"                  \
-	-DGLFW_BUILD_EXAMPLES:BOOL=OFF            \
-	-DGLFW_BUILD_TESTS:BOOL=OFF               \
-	-DGLFW_BUILD_DOCS:BOOL=OFF                \
-	-DBUILD_SHARED_LIBS:BOOL=$SHARED_LIB      \
-	-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE     \
-	-DCMAKE_ENABLE_EXPORTS:BOOL=ON            \
-	-DCMAKE_C_FLAGS:STRING="-m64"
-
-cmake --build . --config $BUILD_TYPE
-
-create_dir $OUTPUT_DIR_64/$BUILD_TYPE/
-
-if [ "$SHARED_LIB" == "OFF" ]; then
-	cp src/libglfw3.a   $OUTPUT_DIR_64/$BUILD_TYPE/
-else
-	cp src/libglfw3.so  $OUTPUT_DIR_64/$BUILD_TYPE/
-fi
-
-cd ../../
-
-clear_build_dir

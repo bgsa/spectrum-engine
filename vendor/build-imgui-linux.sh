@@ -2,12 +2,6 @@
 
 set echo off
 
-export BUILD_DIR=imgui/build
-export BUILD_TYPE=Release
-export SHARED_LIB=OFF
-export OUTPUT_DIR_32=../../lib/x86/$BUILD_TYPE/
-export OUTPUT_DIR_64=../../lib/x86_64/$BUILD_TYPE/
-
 create_dir()
 {
 	if [ ! -d "$1" ]; then
@@ -27,37 +21,35 @@ make_build_dir()
 }
 
 
-make_build_dir
-create_dir $OUTPUT_DIR_32
-cd $BUILD_DIR
+build()
+{
+	export BUILD_DIR=imgui/build
+	export BUILD_TYPE=$2
+	export SHARED_LIB=$4
+	export OUTPUT_DIR=../../lib/$3/$BUILD_TYPE/
+
+	make_build_dir
+	create_dir $OUTPUT_DIR
+	cd $BUILD_DIR
 
 
-cmake .. -G "Unix Makefiles"                   \
-	-DBUILD_SHARED_LIBS:BOOL=$SHARED_LIB   \
-	-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE  \
-	-DCMAKE_ENABLE_EXPORTS:BOOL=ON         \
-	-DOPERATING_SYSTEM:STRING=LINUX        \
-	-DOUTPUT_LIB_DIR:STRING=$OUTPUT_DIR_32 \
-	-DCMAKE_C_FLAGS:STRING="-m32"             
+	cmake .. -G "Unix Makefiles"                   \
+		-DBUILD_SHARED_LIBS:BOOL=$SHARED_LIB   \
+		-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE  \
+		-DCMAKE_ENABLE_EXPORTS:BOOL=ON         \
+		-DOPERATING_SYSTEM:STRING=LINUX        \
+		-DOUTPUT_LIB_DIR:STRING=$OUTPUT_DIR    \
+		-DCMAKE_C_FLAGS:STRING="-m$1"             
 
-cmake --build . --config $BUILD_TYPE
+	cmake --build . --config $BUILD_TYPE$1
 
-cd ../../
+	cd ../../
 
-make_build_dir
-create_dir $OUTPUT_DIR_64
-cd $BUILD_DIR
+	clear_build_dir
+}
 
-cmake .. -G "Unix Makefiles"                   \
-	-DBUILD_SHARED_LIBS:BOOL=$SHARED_LIB   \
-	-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE  \
-	-DCMAKE_ENABLE_EXPORTS:BOOL=ON         \
-	-DOPERATING_SYSTEM:STRING=LINUX        \
-	-DOUTPUT_LIB_DIR:STRING=$OUTPUT_DIR_64 \
-	-DCMAKE_C_FLAGS:STRING="-m64"             
+build 32 Debug   x86    OFF
+build 32 Release x86    OFF
+build 64 Debug   x86_64 OFF
+build 64 Release x86_64 OFF
 
-cmake --build . --config $BUILD_TYPE
-
-cd ../../
-
-clear_build_dir

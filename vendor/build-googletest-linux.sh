@@ -2,11 +2,6 @@
 
 set echo off
 
-export BUILD_DIR=googletest/build
-export BUILD_TYPE=Release
-export OUTPUT_DIR_32=lib/x86
-export OUTPUT_DIR_64=lib/x86_64
-
 create_dir()
 {
 	if [ ! -d "$1" ]; then
@@ -25,41 +20,36 @@ make_build_dir()
 	create_dir $BUILD_DIR
 }
 
+build()
+{
+	export BUILD_DIR=googletest/build
+	export BUILD_TYPE=$2
+	export OUTPUT_DIR=lib/$3/$BUILD_TYPE/
 
-make_build_dir
-cd $BUILD_DIR
+	make_build_dir
+	cd $BUILD_DIR
 
-cmake .. -G "Unix Makefiles"                  \
-	-DBUILD_SHARED_LIBS:BOOL=OFF          \
-	-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE \
-	-DCMAKE_ENABLE_EXPORTS:BOOL=ON        \
-	-DCMAKE_CXX_FLAGS="-fPIC"             \
-	-DCMAKE_C_FLAGS:STRING="-m32"             
+	cmake .. -G "Unix Makefiles"                  \
+		-DBUILD_SHARED_LIBS:BOOL=$4           \
+		-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE \
+		-DCMAKE_ENABLE_EXPORTS:BOOL=ON        \
+		-DCMAKE_CXX_FLAGS="-fPIC"             \
+		-DCMAKE_C_FLAGS:STRING="-m$1"             
 
-cmake --build . --config Release
+	cmake --build . --config $BUILD_TYPE$1
 
-cd ../../
+	cd ../../
 
-create_dir $OUTPUT_DIR_32/$BUILD_TYPE/
-cp -f $BUILD_DIR/lib/libgtest.a        $OUTPUT_DIR_32/$BUILD_TYPE/
-cp -f $BUILD_DIR/lib/libgtest_main.a   $OUTPUT_DIR_32/$BUILD_TYPE/
+	create_dir $OUTPUT_DIR/
+	cp -f $BUILD_DIR/lib/libgtest$5.a        $OUTPUT_DIR
+	cp -f $BUILD_DIR/lib/libgtest_main$5.a   $OUTPUT_DIR
 
-make_build_dir
-cd $BUILD_DIR
+	clear_build_dir
+}
 
-cmake .. -G "Unix Makefiles"                  \
-	-DBUILD_SHARED_LIBS:BOOL=OFF          \
-	-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE \
-	-DCMAKE_ENABLE_EXPORTS:BOOL=ON        \
-	-DCMAKE_CXX_FLAGS="-fPIC"             \
-	-DCMAKE_C_FLAGS:STRING="-m64"             
+build 32 Debug   x86    OFF d
+build 32 Release x86    OFF
+build 64 Debug   x86_64 OFF d
+build 64 Release x86_64 OFF
 
-cmake --build . --config Release
 
-cd ../../
-
-create_dir $OUTPUT_DIR_64/$BUILD_TYPE/
-cp -f $BUILD_DIR/lib/libgtest.a        $OUTPUT_DIR_64/$BUILD_TYPE/
-cp -f $BUILD_DIR/lib/libgtest_main.a   $OUTPUT_DIR_64/$BUILD_TYPE/
-
-clear_build_dir

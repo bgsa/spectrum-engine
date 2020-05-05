@@ -2,9 +2,6 @@
 
 set echo off
 
-export BUILD_DIR=gtest-runner/build
-export BUILD_TYPE=Release
-
 create_dir()
 {
 	if [ ! -d "$1" ]; then
@@ -23,33 +20,31 @@ make_build_dir()
 	create_dir $BUILD_DIR
 }
 
+build()
+{
+	export BUILD_DIR=gtest-runner/build
+	export BUILD_TYPE=$2
+	export BITS=$1
 
-make_build_dir
-cd $BUILD_DIR
+	make_build_dir
+	cd $BUILD_DIR
 
-cmake .. -G "Unix Makefiles"                   \
-	-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE  \
-	-DCMAKE_C_FLAGS:STRING="-m32"             
+	cmake .. -G "Unix Makefiles"                   \
+		-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE  \
+		-DCMAKE_C_FLAGS:STRING="-m$BITS"             
 
-cmake --build . --config $BUILD_TYPE
+	cmake --build . --config $BUILD_TYPE$BITS
 
-cd ../../
+	cd ../../
 
-create_dir bin/x86/$BUILD_TYPE/GoogleTestRunner/
-cp -f $BUILD_DIR/gtest-runner   bin/x86/$BUILD_TYPE/GoogleTestRunner/
+	create_dir bin/$3/$BUILD_TYPE/GoogleTestRunner/
+	cp -f $BUILD_DIR/gtest-runner   bin/$3/$BUILD_TYPE/GoogleTestRunner/
 
-make_build_dir
-cd $BUILD_DIR
+	clear_build_dir
+}
 
-cmake .. -G "Unix Makefiles"                   \
-	-DCMAKE_BUILD_TYPE:STRING=$BUILD_TYPE  \
-	-DCMAKE_C_FLAGS:STRING="-m64"
+build 32 Debug   x86
+build 32 Release x86
+build 64 Debug   x86_64
+build 64 Release x86_64
 
-cmake --build . --config $BUILD_TYPE
-
-cd ../../
-
-create_dir bin/x86_64/$BUILD_TYPE/GoogleTestRunner/
-cp -f $BUILD_DIR/gtest-runner   bin/x86_64/$BUILD_TYPE/GoogleTestRunner/
-
-clear_build_dir
