@@ -2,6 +2,8 @@
 
 set echo off
 
+OS=$(uname -s)
+
 create_dir()
 {
 	if [ ! -d "$1" ]; then
@@ -49,8 +51,12 @@ echo $(pwd)
 #Copying header files
 cp -f glew-cmake/include/GL/*.h  include/GL/
 
-build 32 Debug   x86    OFF d
-#build 32 Release x86    OFF
-#build 64 Debug   x86_64 OFF d
-#build 64 Release x86_64 OFF
+# if not MacOS...
+if [ "$OS" != "Darwin" ]; then
+	build 32 Debug   x86    OFF d
+	build 32 Release x86    OFF
+fi
+
+build 64 Debug   x86_64 OFF d
+build 64 Release x86_64 OFF
 

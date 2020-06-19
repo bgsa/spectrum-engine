@@ -2,6 +2,8 @@
 
 set echo off
 
+OS=$(uname -s)
+
 create_dir()
 {
 	if [ ! -d "$1" ]; then
@@ -43,8 +45,11 @@ build()
 	clear_build_dir
 }
 
-build 32 Debug   x86
-build 32 Release x86
+if [ "$OS" != "Darwin" ]; then
+	build 32 Debug   x86
+	build 32 Release x86
+fi
+
 build 64 Debug   x86_64
 build 64 Release x86_64
 
