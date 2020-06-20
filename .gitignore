@@ -11,3 +11,4 @@ vendor/bin
 vendor/include/pugixml/
 vendor/include/imgui/
 vendor/include/GL/
+vendor/include/pugixml/
