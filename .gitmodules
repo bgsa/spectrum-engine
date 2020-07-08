@@ -1,36 +1,48 @@
 [submodule "vendor/imgui"]
 	path = vendor/imgui
 	url = http://github.com/bgsa/imgui.git
+	branch = v1.75
 [submodule "sp-foundation"]
 	path = sp-foundation
 	url = https://github.com/bgsa/sp-foundation.git
+	branch = dev
 [submodule "sp-frontend"]
         path = sp-frontend
         url = https://github.com/bgsa/sp-frontend.git
+	branch = master
 [submodule "vendor/glfw"]
 	path = vendor/glfw
 	url = https://github.com/glfw/glfw.git
+	branch = 3.3.2
 [submodule "sp-physics"]
 	path = sp-physics
 	url = https://github.com/bgsa/sp-physics.git
+	branch = dev
 [submodule "vendor/googletest"]
 	path = vendor/googletest
 	url = https://github.com/google/googletest.git
+	branch = release-1.10.0
 [submodule "vendor/gtest-runner"]
 	path = vendor/gtest-runner
 	url = https://github.com/nholthaus/gtest-runner.git
+	branch = v1.4.0
 [submodule "vendor/OpenCL-Headers"]
 	path = vendor/OpenCL-Headers
 	url = https://github.com/KhronosGroup/OpenCL-Headers.git
+	branch = v2020.06.16
 [submodule "vendor/OpenCL-ICD-Loader"]
 	path = vendor/OpenCL-ICD-Loader
 	url = https://github.com/KhronosGroup/OpenCL-ICD-Loader.git
+	branch = v2020.06.16
 [submodule "sp-rendering"]
 	path = sp-rendering
 	url = https://github.com/bgsa/sp-rendering.git
+	branch = dev
 [submodule "vendor/pugixml"]
 	path = vendor/pugixml
 	url = https://github.com/zeux/pugixml.git
+	branch = v1.10
 [submodule "vendor/glew-cmake"]
 	path = vendor/glew-cmake
 	url = https://github.com/Perlmint/glew-cmake.git
+	branch = glew-cmake-2.1.0
