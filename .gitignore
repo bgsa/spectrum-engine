@@ -8,7 +8,8 @@ vendor/lib
 vendor/lib/x86/**
 vendor/lib/x86_86/**
 vendor/bin
+vendor/include
 vendor/include/pugixml/
 vendor/include/imgui/
-vendor/include/GL/
+vendor/include/GL/**.*
 vendor/include/pugixml/
