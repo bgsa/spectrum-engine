@@ -46,3 +46,11 @@
 	path = vendor/glew-cmake
 	url = https://github.com/Perlmint/glew-cmake.git
 	branch = glew-cmake-2.1.0
+[submodule "stb"]
+	path = stb
+	url = https://github.com/nothings/stb.git
+	branch = master
+[submodule "vendor/stb"]
+	path = vendor/stb
+	url = https://github.com/nothings/stb.git
+	branch = master
