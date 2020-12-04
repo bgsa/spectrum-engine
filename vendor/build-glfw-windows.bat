@@ -32,3 +32,27 @@ copy "src\glfw.dir\Debug\glfw.pdb"    "%OUTPUT_DIR%\Debug"
 
 cd ..\..\
 if exist %BUILD_DIR% ( rmdir /s/q %BUILD_DIR% )
+
+
+
+
+mkdir %BUILD_DIR%
+cd %BUILD_DIR%
+
+cmake .. -G "Visual Studio 15 2017"                                ^
+	-DGLFW_BUILD_EXAMPLES:BOOL=OFF                                 ^
+	-DGLFW_BUILD_TESTS:BOOL=OFF                                    ^
+	-DGLFW_BUILD_DOCS:BOOL=OFF                                     ^
+	-DBUILD_SHARED_LIBS:BOOL=%SHARED_LIB%                          ^
+	-DCMAKE_ENABLE_EXPORTS:BOOL=ON                                 ^
+	-DUSE_MSVC_RUNTIME_LIBRARY_DLL:BOOL=ON                         ^
+	-DCMAKE_LIBRARY_OUTPUT_DIRECTORY:STRING="%OUTPUT_DIR%"         ^
+	-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY:STRING="%OUTPUT_DIR%"
+
+cmake --build . --config Release
+
+if EXIST "%OUTPUT_DIR%\Release\glfw3.dll" DEL /F "%OUTPUT_DIR%\Release\glfw3.dll"
+if EXIST "%OUTPUT_DIR%\Release\glfw3.ilk" DEL /F "%OUTPUT_DIR%\Release\glfw3.ilk"
+
+cd ..\..\
+if exist %BUILD_DIR% ( rmdir /s/q %BUILD_DIR% )
