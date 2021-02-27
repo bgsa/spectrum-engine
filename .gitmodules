@@ -54,3 +54,6 @@
 	path = vendor/stb
 	url = https://github.com/nothings/stb.git
 	branch = master
+[submodule "vendor/eigen"]
+	path = vendor/eigen
+	url = https://gitlab.com/libeigen/eigen
