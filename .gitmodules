@@ -57,3 +57,6 @@
 [submodule "vendor/eigen"]
 	path = vendor/eigen
 	url = https://gitlab.com/libeigen/eigen
+[submodule "vendor/json"]
+	path = vendor/json
+	url = https://github.com/nlohmann/json.git
