@@ -48,6 +48,15 @@ build()
 	cd ../../
 
 	clear_build_dir
+
+	# copy headers
+	cd include
+	if [ -d imgui ]; then
+		rm -rf imgui
+	fi
+	mkdir imgui
+	cp ../imgui/*.h  imgui
+	cd ../
 }
 
 if [ "$OS" != "Darwin" ]; then
@@ -57,4 +66,3 @@ fi
 
 build 64 Debug   x86_64 OFF
 build 64 Release x86_64 OFF
-

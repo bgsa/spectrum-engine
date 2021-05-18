@@ -3,6 +3,7 @@
 set echo off
 
 OS=$(uname -s)
+export HEADER_DIR=$(pwd)/OpenCL-Headers
 
 create_dir()
 {
@@ -27,7 +28,6 @@ build()
 	export BUILD_DIR=OpenCL-ICD-Loader/build
 	export BUILD_TYPE=$2
 	export OUTPUT_DIR=../../lib/$3/$BUILD_TYPE/
-	export HEADER_DIR=$(pwd)/OpenCL-Headers
 
 	make_build_dir
 	cd $BUILD_DIR
@@ -54,3 +54,10 @@ fi
 build 64 Debug   x86_64 OFF
 build 64 Release x86_64 OFF
 
+export OUTPUT_DIR=include/CL/
+if [ -d $OUTPUT_DIR ]; then
+    rm -rf $OUTPUT_DIR
+fi
+mkdir -p "$OUTPUT_DIR"
+
+cp -R "$HEADER_DIR/CL" "include"

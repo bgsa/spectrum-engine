@@ -8,7 +8,8 @@
 		"files.associations": {
 			"iosfwd": "cpp",
 			"cmath": "cpp",
-			"chrono": "cpp"
+			"chrono": "cpp",
+			"algorithm": "cpp"
 		},
 		"catch2TestExplorer.executables": [
 			{
