@@ -31,34 +31,31 @@ build()
 	create_dir $BUILD_DIR
 	cd $BUILD_DIR
 
-echo $(pwd)
-echo $BUILD_DIR
-
-	cmake ../../../ -G "Unix Makefiles"            \
-		-DBUILD_SHARED_LIBS:BOOL=$4     \
-		-DCMAKE_ENABLE_EXPORTS:BOOL=ON  \
+	cmake ../../../ -G "Unix Makefiles"  \
+		-DBUILD_SHARED_LIBS:BOOL=$4      \
+		-DCMAKE_ENABLE_EXPORTS:BOOL=ON   \
 		-DCMAKE_MACOSX_RPATH:BOOL=ON     \
-		-DCMAKE_C_FLAGS:STRING="-m$1"
+		-DCMAKE_C_FLAGS:STRING="-m$1"    \
+		-DCMAKE_CXX_FLAGS:STRING="-m$1"
 
-	#cmake --build . --target glew_s --config $BUILD_TYPE$1
 	cmake --build . --config $BUILD_TYPE$1
 
-	cp lib/libGLEW$5.a    $OUTPUT_DIR/libGLEW$5.a
+	cp $BUILD_DIR/lib/libglew.a    $OUTPUT_DIR/libGLEW.a
 
 	cd ../
 	clear_build_dir
-	cd ../
+	cd ../../../
 }
 
 #Copying header files
 cp -f glew-cmake/include/GL/*.h  include/GL/
 
-# if not MacOS...
-if [ "$OS" != "Darwin" ]; then
-	build 32 Debug   x86    OFF d
-	build 32 Release x86    OFF
-fi
 
 build 64 Debug   x86_64 OFF
 build 64 Release x86_64 OFF
 
+# if not MacOS...
+if [ "$OS" != "Darwin" ]; then
+	build 32 Debug   x86    OFF
+	build 32 Release x86    OFF
+fi
