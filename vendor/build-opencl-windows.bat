@@ -57,3 +57,11 @@ copy "Release\*.*"  "%OUTPUT_DIR%\Release\"
 
 cd ..\..\
 if exist %BUILD_DIR% ( rmdir /s/q %BUILD_DIR% )
+
+
+
+set OUTPUT_DIR=include\CL
+if exist %OUTPUT_DIR% ( rmdir /s/q %OUTPUT_DIR% )
+mkdir %OUTPUT_DIR%
+
+copy OpenCL-Headers\CL\*.*   %OUTPUT_DIR%
