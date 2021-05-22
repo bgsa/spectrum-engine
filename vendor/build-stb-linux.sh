@@ -1,5 +1,7 @@
 set echo off
 
+export current_dir=$(pwd)
+
 export OUTPUT_DIR=./include/stb
 
 if [ -d $OUTPUT_DIR ]; then

@@ -1,9 +1,8 @@
 #!/bin/bash
 
-set echo off
+source ../build-base-linux.sh
 
 export current_dir=$(pwd)
-OS=$(uname -s)
 
 build()
 {

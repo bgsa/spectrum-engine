@@ -1,8 +1,6 @@
 #!/bin/bash
 
-set echo off
-
-OS=$(uname -s)
+source ../build-base-linux.sh
 
 export OUTPUT_DIR=include/nlohmann/
 
