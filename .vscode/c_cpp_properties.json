@@ -2,20 +2,21 @@
     "version": 4,
     "env": {
         "DefaultIncludePath": [
-            "${workspaceFolder}/vendor/imgui",
-            "${workspaceFolder}/vendor/glfw/include",
             "${workspaceFolder}/sp-foundation/src",
             "${workspaceFolder}/sp-physics/src",
+            "${workspaceFolder}/sp-rendering/src",
             "${workspaceFolder}/sp-frontend/src",
             "${workspaceFolder}/sp-physics/test/src",
-            "${workspaceFolder}/vendor/googletest/googletest/include",
-            "${workspaceFolder}/vendor/include"
+            "${workspaceFolder}/vendor/include",
+            "${workspaceFolder}/vendor/googletest/googletest/include"
         ],
         "DefaultDefines": [
-            "UNIX",
             "ENV_64BITS",
+            "DEBUG",
+            "SP_ASSERT_ENABLED",
             "API_EXPORT",
             "GLFW_ENABLED",
+            "OPENGL_ENABLED",
             "OPENCL_ENABLED",
             "GOOGLETEST_ENABLED",
             "-Wno-dangling-else"

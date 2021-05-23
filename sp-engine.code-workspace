@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "sp-physics"
+			"path": "."
 		}
 	],
 	"settings": {
@@ -9,7 +9,9 @@
 			"iosfwd": "cpp",
 			"cmath": "cpp",
 			"chrono": "cpp",
-			"algorithm": "cpp"
+			"algorithm": "cpp",
+			"*.tcc": "cpp",
+			"fstream": "cpp"
 		},
 		"catch2TestExplorer.executables": [
 			{
