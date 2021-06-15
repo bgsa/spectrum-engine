@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "Debug",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/sp-frontend/bin/x86_64/Debug/SpEngine",
-            "args": [],
+            "args": ["2", "DOP18" , "7000", "resultado.csv"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/sp-frontend/bin/x86_64/Debug/",
             "environment": [],

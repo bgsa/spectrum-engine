@@ -11,7 +11,8 @@
 			"chrono": "cpp",
 			"algorithm": "cpp",
 			"*.tcc": "cpp",
-			"fstream": "cpp"
+			"fstream": "cpp",
+			"tensor": "cpp"
 		},
 		"catch2TestExplorer.executables": [
 			{
