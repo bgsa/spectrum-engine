@@ -4,11 +4,11 @@
 	branch = v1.75
 [submodule "sp-foundation"]
 	path = sp-foundation
-	url = https://github.com/bgsa/sp-foundation.git
+	url = ssh://git@github.com:bgsa/sp-foundation.git
 	branch = dev
 [submodule "sp-frontend"]
         path = sp-frontend
-        url = https://github.com/bgsa/sp-frontend.git
+        url = ssh://git@github.com:bgsa/sp-frontend.git
 	branch = master
 [submodule "vendor/glfw"]
 	path = vendor/glfw
@@ -16,7 +16,7 @@
 	branch = 3.3.2
 [submodule "sp-physics"]
 	path = sp-physics
-	url = https://github.com/bgsa/sp-physics.git
+	url = ssh://git@github.com:bgsa/sp-physics.git
 	branch = dev
 [submodule "vendor/googletest"]
 	path = vendor/googletest
@@ -36,7 +36,7 @@
 	branch = v2020.06.16
 [submodule "sp-rendering"]
 	path = sp-rendering
-	url = https://github.com/bgsa/sp-rendering.git
+	url = ssh://git@github.com:bgsa/sp-rendering.git
 	branch = dev
 [submodule "vendor/pugixml"]
 	path = vendor/pugixml
